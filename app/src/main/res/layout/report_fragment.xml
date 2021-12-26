@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_gradient"
+    >
+    <TextView
+        android:id="@+id/row_notification_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Biểu Đồ"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/border_bottom"
+        />
+    <LinearLayout
+        android:id="@+id/range_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/row_notification_header"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/border_bottom"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Khoảng thời gian:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            />
+        <LinearLayout
+            android:id="@+id/getInRange"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:id="@+id/txtInRange"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="01/12/2021-30/12/2021"
+                android:textSize="14sp"
+                android:paddingStart="20dp"
+                android:paddingTop="2dp"
+                android:textAlignment="textEnd"
+                />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_baseline_arrow_drop_down_24dp"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/money_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/range_time"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginTop="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/border_bottom"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Số dư đầu"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                />
+            <TextView
+                android:id="@+id/begin_money_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="50,000,000đ"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Số dư cuối"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                />
+            <TextView
+                android:id="@+id/end_money_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="50,000,000đ"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/money_key_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/money_key"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/border_bottom"
+        android:weightSum="3"
+        >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="2"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:text="Khoản thu"
+                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:gravity="center|bottom"
+
+                    />
+                <TextView
+                    android:id="@+id/money_in"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:text="50,000,000đ"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorIn"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    />
+
+            </LinearLayout>
+         <View
+            android:layout_width="1dp"
+            android:layout_height="160dp"
+            android:background="@color/colorDivider"
+            />
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/piechart1"
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_weight="2"
+                    />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/money_key_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/money_key_in"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/border_bottom"
+        android:weightSum="3"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="2"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Khoản chi"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+
+                />
+            <TextView
+                android:id="@+id/money_out"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="50,000,000đ"
+                android:textAlignment="center"
+                android:textColor="@color/colorOut"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="160dp"
+            android:background="@color/colorDivider"
+            />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/piechart2"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_weight="2"
+            />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

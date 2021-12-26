@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">ProjectI</string>
+    <string name="transaction">Sổ giao dịch</string>
+    <string name="report">Báo cáo</string>
+    <string name="user">Tài khoản</string>
+    <string name="cancel">Hủy</string>
+    <string name="add_transaction">Thêm giao dịch</string>
+    <string name="update_transaction">Sửa giao dịch</string>
+    <string name="save">Lưu</string>
+    <string name="update">Sửa</string>
+    <string name="amount_of_money">Số tiền</string>
+    <string name="select_trans_group">Chọn mục thu chi</string>
+    <string name="note">Nội dung thu chi</string>
+    <string name="title_activity_select_date_start_end">SelectDateStart_EndActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="begin_amount">Số dư đầu</string>
+    <string name="end_amount">Số dư cuối</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

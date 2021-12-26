@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+
+        <LinearLayout
+            android:id="@+id/transactionGroupWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            >
+            <ImageView
+                android:id="@+id/iconGroup"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/anuong"
+                />
+            <TextView
+                android:id="@+id/nameGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ăn uống"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:paddingStart="10dp"
+                />
+
+
+        </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDivider"
+        android:layout_marginStart="35dp"
+        />
+
+
+</LinearLayout>

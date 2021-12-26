@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        >
+    
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_header_border_bottom"
+            >
+            <TextView
+                android:id="@+id/btnCancelTransaction"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="Hủy"
+                style="@style/TextButton"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Chọn nhóm"
+                style="@style/HeaderTitleText"
+                android:gravity="center"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_marginEnd="50dp"
+                />
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bordered"
+            >
+
+            <TextView
+                android:id = "@+id/btnIncoming"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Khoản thu"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:id = "@+id/btnOutgoing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Khoản chi"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="18sp"
+                />
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTransactionGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbAddTransacsionGroup"
+        android:layout_width="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_add_36"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_margin="20dp"
+        >
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+

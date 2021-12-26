@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AddTransaction"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/bg_header_border_bottom"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btnCancelUpdateTransaction"
+                style="@style/TextButton"
+                android:text="@string/cancel"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"/>
+
+            <TextView
+                style="@style/HeaderTitleText"
+                android:gravity="center"
+                android:text="@string/update_transaction"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/btnSaveUpdateTransaction"
+                style="@style/TextButtonBold"
+                android:text="@string/update"
+                android:paddingTop="16dp"
+                android:gravity="end"
+                android:paddingBottom="16dp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/ic_baseline_attach_money_24"
+                app:tint="#666"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+
+            <EditText
+                android:inputType="number"
+                android:layout_marginStart="10dp"
+                android:id="@+id/etAmountOfMoneyUpdate"
+                android:hint="2,000,000"
+                style="@style/EditTextBigSize"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginStart="35dp"
+            android:background="@color/colorDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:id="@+id/tvSelectGroupUpdate"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_height="wrap_content">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivTransGroupIconUpdate"
+                android:src="@drawable/ic_wallet_24dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:tint="@color/colorPrimary"
+                app:civ_border_width="1dp"/>
+
+
+            <TextView
+                android:layout_marginStart="10dp"
+                style="@style/TextViewBigSize"
+                android:id="@+id/tvSelectedGroupUpdate"
+                android:textColor="@color/colorGray"
+                android:text="@string/select_trans_group"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                app:tint="@color/colorGray"
+                android:src="@drawable/ic_baseline_chevron_right_24"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginStart="35dp"
+            android:background="@color/colorDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_baseline_notes_24"
+                app:tint="#666"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+            <EditText
+                android:textSize="18sp"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_marginStart="10dp"
+                android:background="@android:color/transparent"
+                android:hint="@string/note"
+                android:id="@+id/etTransactionNoteUpdate"
+                android:textColor="@color/colorBlack"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginStart="35dp"
+            android:background="@color/colorDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:id="@+id/tvUpdate"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_baseline_date_range_24"
+                app:tint="#666"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+
+            <TextView
+                android:textSize="18sp"
+                android:id="@+id/tvDatePickerValueUpdate"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/colorBlack"
+                android:text="dd/mm/yyyy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnDeleteTransaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:text="Xóa giao dịch"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_delete"
+        />
+
+
+</LinearLayout>
