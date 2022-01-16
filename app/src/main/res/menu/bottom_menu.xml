@@ -23,6 +23,7 @@
         app:showAsAction="always"
 
         />
+
     <item
         android:id="@+id/nav_action_bonus"
         android:icon="@drawable/bonus"

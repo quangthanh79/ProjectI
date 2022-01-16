@@ -11,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.pqt.phamquangthanh.projecti.R;
@@ -27,6 +28,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     String password;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    TextView textViewError;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,12 +43,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnLogin.setOnClickListener(this);
         sharedPreferences = getSharedPreferences("dulieudangnhap", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
-        editor.putString("password","66668888");
-        editor.commit();
+        if(sharedPreferences.getString("password","").equals("")){
+            editor.putString("password","66668888");
+            editor.commit();
+        }
+
     }
     public void mapView(){
-        edtPassword = findViewById(R.id.editPassword);
-        btnLogin    = findViewById(R.id.btnLogin);
+        edtPassword   = findViewById(R.id.editPassword);
+        btnLogin      = findViewById(R.id.btnLogin);
+        textViewError = findViewById(R.id.textViewError);
     }
 
     @Override
@@ -55,10 +61,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
        if( password.equals(sharedPreferences.getString("password",""))){
            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
            startActivity(intent);
-//           Toast.makeText(LoginActivity.this, "Thành công!", Toast.LENGTH_SHORT).show();
        }
        else{
-           Toast.makeText(LoginActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+           textViewError.setVisibility(View.VISIBLE);
        }
 
     }

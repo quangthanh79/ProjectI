@@ -230,26 +230,23 @@ public class DateUtil {
     public static long getStartDayOfMonth(int month,int year){
         Calendar calendar = Calendar.getInstance();
         int month_ex = month-1;
+
+        calendar.set(Calendar.DAY_OF_MONTH,1);
         calendar.set(Calendar.MONTH,month_ex);
         calendar.set(Calendar.YEAR,year);
-        while(calendar.get(Calendar.DAY_OF_MONTH)!=1){
-            calendar.add(Calendar.DAY_OF_MONTH,-1);
-        }
-        Calendar calendar1 = new GregorianCalendar(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH));
+
+        Calendar calendar1 = new GregorianCalendar(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),1);
         return calendar1.getTimeInMillis();
+
     }
     public static long getEndDayOfMonth(int month,int year){
         Calendar calendar = Calendar.getInstance();
-        int month_ex = month-1;
-        calendar.set(Calendar.MONTH,month_ex);
+
+        calendar.set(Calendar.DAY_OF_MONTH,1);
+        calendar.set(Calendar.MONTH,month);
         calendar.set(Calendar.YEAR,year);
-        if(calendar.get(Calendar.DAY_OF_MONTH)==1){
-            calendar.add(Calendar.DAY_OF_MONTH,1);
-        }
-        while(calendar.get(Calendar.DAY_OF_MONTH) != 1){
-            calendar.add(Calendar.DAY_OF_YEAR,1);
-        }
-        calendar.add(Calendar.DAY_OF_YEAR,-1);
+
+
         Calendar calendar1 = new GregorianCalendar(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH));
 
         return calendar1.getTimeInMillis();

@@ -25,7 +25,6 @@
             android:src="@drawable/ic_wallet" />
 
 
-
         <EditText
             android:id="@+id/editPassword"
             android:layout_width="match_parent"
@@ -33,24 +32,47 @@
             android:layout_below="@id/ivLogo"
             android:layout_marginTop="100dp"
             android:background="@drawable/edit_text"
-            android:ems="10"
             android:hint="Enter Password"
             android:inputType="textPassword"
             android:padding="15dp"
+            android:paddingStart="40dp"
             android:textSize="17sp" />
 
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_above="@+id/textViewError"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_baseline_lock_24" />
+
+        <TextView
+            android:id="@+id/textViewError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editPassword"
+            android:layout_marginTop="4dp"
+            android:text="Mật khẩu là chuỗi tối thiểu 8 ký tự. Quý khách vui lòng kiểm tra lại."
+            android:visibility="invisible"
+            android:textColor="#de1212"
+            android:textSize="12sp"
+            android:paddingStart="15dp"
+
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="474dp" />
 
         <Button
-            android:layout_below="@id/editPassword"
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/editPassword"
             android:layout_marginTop="40dp"
             android:background="@drawable/button"
             android:text="XÁC NHẬN"
             android:textAllCaps="false"
             android:textColor="#FE5295"
-            android:textSize="17sp"/>
+            android:textSize="17sp" />
 
     </RelativeLayout>
 

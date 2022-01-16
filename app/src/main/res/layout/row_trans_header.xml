@@ -66,19 +66,10 @@
             android:layout_gravity="end"
             android:layout_height="30dp"
             android:layout_width="20dp"
-            android:src="@drawable/ic_action_name"
+            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
             />
 
     </LinearLayout>
-<!--    <TextView-->
-<!--        android:layout_centerVertical="true"-->
-<!--        android:id="@+id/row_trans_header_amount"-->
-<!--        android:layout_toEndOf="@id/row_trans_header_date_box"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:text="-50,000.00"-->
-<!--        android:gravity="end"-->
-<!--        style="@style/SmallValueBold"-->
-<!--        android:layout_height="wrap_content"/>-->
+
 
 </RelativeLayout>

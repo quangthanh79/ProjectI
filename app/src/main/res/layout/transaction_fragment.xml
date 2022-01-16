@@ -3,6 +3,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
   <com.google.android.material.appbar.AppBarLayout
@@ -17,7 +18,8 @@
         >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -41,11 +43,11 @@
                     android:textStyle="bold" />
             </LinearLayout>
             <ImageView
-                android:id="@+id/image_notification"
-                android:layout_marginTop="13dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/ic_notification_24dp"
+                android:id="@+id/image_warning"
+                android:layout_marginTop="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_warning_24"
                 android:scaleType="fitXY"
                 />
             <ImageView
@@ -135,17 +137,15 @@
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/srlTransaction"
         android:layout_width="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_height="match_parent"
-        android:fillViewport="true"
         android:background="#E9EBEE"
-        >
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvTransaction"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

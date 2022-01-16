@@ -1,7 +1,9 @@
 package com.pqt.phamquangthanh.projecti.fragment;
 
 import android.app.AlertDialog;
-import android.app.Fragment;
+//import android.app.Fragment;
+import androidx.fragment.app.Fragment;
+
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentManager;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.CombinedChart;
@@ -114,7 +117,7 @@ public class FollowFragment extends Fragment implements View.OnClickListener {
                 showAlertDialog1();
                 break;
             case R.id.getTimeStart:
-                pd1.show(getFragmentManager(), "MonthYearPickerDialog");
+                pd1.show(getActivity().getSupportFragmentManager(), "MonthYearPickerDialog");
                 break;
             case R.id.getTimeEnd:
                 showAlertDialog2();
@@ -200,13 +203,24 @@ public class FollowFragment extends Fragment implements View.OnClickListener {
 
         while(count<= amountMonth){
             if(month_start == 12){
-                entries.add(new BarEntry(count,sqLiteUtil.getTotalAmountInMonthFollowType(type,m,y)));
+                if(type == 1){
+                    entries.add(new BarEntry(count,sqLiteUtil.getTotalAmountInMonthFollowType(type,m,y)));
+                }else{
+                    entries.add(new BarEntry(count,0-sqLiteUtil.getTotalAmountInMonthFollowType(type,m,y)));
+                }
+
+
+
                 String lb = "T" + m+"/"+y;
                 label.add(lb);
                 m = 1;
                 y = year_start;
             }else{
-                entries.add(new BarEntry(count,sqLiteUtil.getTotalAmountInMonthFollowType(type,m,y)));
+                if(type == 1){
+                    entries.add(new BarEntry(count,sqLiteUtil.getTotalAmountInMonthFollowType(type,m,y)));
+                }else{
+                    entries.add(new BarEntry(count,0-sqLiteUtil.getTotalAmountInMonthFollowType(type,m,y)));
+                }
                 String lb = "T" + m;
                 label.add(lb);
                 m+=1;

@@ -3,11 +3,14 @@ package com.pqt.phamquangthanh.projecti.fragment;
 import static com.github.mikephil.charting.data.PieDataSet.*;
 
 import android.app.Activity;
-import android.app.Fragment;
+//import android.app.Fragment;
+import androidx.fragment.app.Fragment;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.fonts.Font;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,8 +48,9 @@ import java.util.List;
 public class ReportFragment extends Fragment {
     PieChart pieChart1,pieChart2;
     LinearLayout getInRange;
-    TextView txtInRange,begin_money_key,end_money_key;
+    public static TextView txtInRange,begin_money_key,end_money_key;
     TextView money_out,money_in;
+    // ngày đầu, ngày cuối
     public long Day_Start,Day_End;
     public long amount_in,amount_out;
     SQLiteUtil sqLiteUtil;
@@ -63,22 +67,41 @@ public class ReportFragment extends Fragment {
         View view = inflater.inflate(R.layout.report_fragment, container, false);
         sqLiteUtil  = new SQLiteUtil(getActivity());
         mapView(view);
+        updateTime();
+        fetchChart();
         getInRange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onItemCLickListener.onClick();
             }
         });
-        drawChart(pieChart1,1);
-        drawChart(pieChart2,0);
+
 
         return view;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+//        Log.i("fragmentReport", "fragmentReport: onCreate");
+        super.onCreate(savedInstanceState);
     }
     public void updateTime(){
         Date firstDay,lastDay;
         firstDay = ConversionUtil.timestampToDate(Day_Start);
         lastDay = ConversionUtil.timestampToDate(Day_End);
-        txtInRange.setText(DateUtil.formatDateBaseOnCustom(firstDay,lastDay));
+
+        this.txtInRange.setText(DateUtil.formatDateBaseOnCustom(firstDay,lastDay));
+
+    }
+    private void mapView(View view){
+        pieChart1 = view.findViewById(R.id.piechart1);
+        pieChart2 = view.findViewById(R.id.piechart2);
+        getInRange = view.findViewById(R.id.getInRange);
+        txtInRange = view.findViewById(R.id.txtInRange);
+        begin_money_key = view.findViewById(R.id.begin_money_key);
+        end_money_key   = view.findViewById(R.id.end_money_key);
+        money_in = view.findViewById(R.id.money_in);
+        money_out = view.findViewById(R.id.money_out);
     }
     public void fetchChart(){
         Date firstDay,lastDay;
@@ -116,7 +139,7 @@ public class ReportFragment extends Fragment {
         pieChart.setData(pieData);
         pieChart.invalidate();
         pieChart.setDrawEntryLabels(false);//thêm label
-        pieChart.setHoleRadius(40f);
+        pieChart.setHoleRadius(35f);
         pieChart.setDrawHoleEnabled(true);
 
     }
@@ -155,16 +178,7 @@ public class ReportFragment extends Fragment {
 
         return entries;
     }
-    private void mapView(View view){
-        pieChart1 = view.findViewById(R.id.piechart1);
-        pieChart2 = view.findViewById(R.id.piechart2);
-        getInRange = view.findViewById(R.id.getInRange);
-        txtInRange = view.findViewById(R.id.txtInRange);
-        begin_money_key = view.findViewById(R.id.begin_money_key);
-        end_money_key   = view.findViewById(R.id.end_money_key);
-        money_in = view.findViewById(R.id.money_in);
-        money_out = view.findViewById(R.id.money_out);
-    }
+
     public interface OnItemCLickListener{
         void onClick();
     }

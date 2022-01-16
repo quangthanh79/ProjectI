@@ -49,7 +49,6 @@ public class AddTransaction extends AppCompatActivity implements View.OnClickLis
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_add_transaction);
-
         mapView();
         init();
 
@@ -119,7 +118,6 @@ public class AddTransaction extends AppCompatActivity implements View.OnClickLis
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                         calendar.set(i,i1,i2);
                         selectedDate = calendar.getTime();
-//                        SimpleDateFormat dateFormat = new SimpleDateFormat("");
                         tvDatePickerValue.setText(DateUtil.formatDate(selectedDate));
                     }
                 },nam,thang,ngay);
@@ -157,7 +155,6 @@ public class AddTransaction extends AppCompatActivity implements View.OnClickLis
                     Long AmountOfMoney = Long.parseLong(text);
                     String note = etTransactionNote.getText().toString();
                     Date date = selectedDate;
-
 
                     Intent return_intent_2 = new Intent();
                     return_intent_2.putExtra("result_add_transaction",new Transaction(transactionGroup,AmountOfMoney,note,date,0));

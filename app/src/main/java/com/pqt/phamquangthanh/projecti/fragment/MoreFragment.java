@@ -1,12 +1,17 @@
 package com.pqt.phamquangthanh.projecti.fragment;
 
 import android.app.AlertDialog;
-import android.app.Fragment;
+//import android.app.Fragment;
+import androidx.fragment.app.Fragment;
+
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,9 +26,13 @@ import androidx.annotation.Nullable;
 import com.pqt.phamquangthanh.projecti.R;
 
 import java.text.DecimalFormat;
+import java.util.logging.Logger;
 
 public class MoreFragment extends Fragment {
     LinearLayout more_warning,more_password;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+    DecimalFormat decimalFormat = new DecimalFormat("##,###,###");
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -34,6 +43,7 @@ public class MoreFragment extends Fragment {
             public void onClick(View view) {
                 View alertLayout = inflater.inflate(R.layout.layout_custom_warning, null);
                 EditText etWarning = (EditText) alertLayout.findViewById(R.id.et_Warning);
+                etWarning.setText(decimalFormat.format(sharedPreferences.getLong("warning",0))+"VND");
                 etWarning.addTextChangedListener(new TextWatcher() {
                     @Override
                     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -58,7 +68,7 @@ public class MoreFragment extends Fragment {
                                 text = text.replaceAll("VND", "");
                             }
                             Long val = Long.parseLong(text);
-                            DecimalFormat decimalFormat = new DecimalFormat("##,###,###");
+
                             etWarning.setText(decimalFormat.format(val)+"VND");
                             etWarning.setSelection(etWarning.getText().length()-3);
                         }
@@ -81,8 +91,19 @@ public class MoreFragment extends Fragment {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // code for matching password
-                        Toast.makeText(getActivity(),"OK", Toast.LENGTH_SHORT).show();
+                        String textWarning = etWarning.getText().toString();
+                        if(textWarning.length() != 0) {
+                            if (textWarning.contains(",")) {
+                                textWarning = textWarning.replaceAll(",", "");
+                            }
+                            if (textWarning.contains("VND")) {
+                                textWarning = textWarning.replaceAll("VND", "");
+                            }
+                        }
+                        Long val = Long.parseLong(textWarning);
+                        editor.putLong("warning",val);
+                        editor.commit();
+                        Toast.makeText(getActivity(),val+"", Toast.LENGTH_SHORT).show();
                     }
                 });
                 AlertDialog dialog = alert.create();
@@ -92,7 +113,8 @@ public class MoreFragment extends Fragment {
         more_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                onChangeCLickListener.onClick();
+                Log.d("myTag", "This is my message");
             }
         });
 
@@ -101,8 +123,20 @@ public class MoreFragment extends Fragment {
     private void mapView(View view){
         more_warning  = view.findViewById(R.id.more_warning);
         more_password = view.findViewById(R.id.more_password);
-    }
+        sharedPreferences = getActivity().getSharedPreferences("dulieucanhbao", Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putLong("warning",4000000);
+        editor.commit();
 
+    }
+    public interface OnChangeCLickListener{
+        void onClick();
+    }
+    public MoreFragment.OnChangeCLickListener onChangeCLickListener;
+
+    public void setOnChangeCLickListener(OnChangeCLickListener onChangeCLickListener) {
+        this.onChangeCLickListener = onChangeCLickListener;
+    }
 
 
 }

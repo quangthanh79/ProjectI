@@ -158,7 +158,6 @@ public class SQLiteUtil extends SQLiteOpenHelper {
             query_transaction = "SELECT * FROM " + TABLE_TRANSACTION + " WHERE " + TRANSACTION_DATE + " >= " + startDayOfMonth + " AND " + TRANSACTION_DATE + " <=" + endDayOfMonth + " AND " + TRANSACTION_AMOUNT + ">=0";
         }
 
-
         Cursor c = db.rawQuery(query_transaction, null);
         if (c == null) {
             return 0;

@@ -16,6 +16,12 @@
         android:textAlignment="center"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        android:background="@drawable/borderbottom"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/row_notification_header"
         android:background="@drawable/border_bottom"
         />
     <LinearLayout
@@ -24,10 +30,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/row_notification_header"
         android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:orientation="horizontal"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:background="@drawable/border_bottom"
+        android:background="@drawable/edit_text"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -72,9 +80,11 @@
         android:orientation="horizontal"
         android:weightSum="2"
         android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:background="@drawable/border_bottom"
+        android:background="@drawable/edit_text"
         >
         <LinearLayout
             android:layout_width="0dp"
@@ -130,11 +140,13 @@
     <LinearLayout
         android:id="@+id/money_key_in"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="180dp"
         android:layout_below="@+id/money_key"
         android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/border_bottom"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/edit_text"
         android:weightSum="3"
         >
             <LinearLayout
@@ -167,14 +179,16 @@
             </LinearLayout>
          <View
             android:layout_width="1dp"
-            android:layout_height="160dp"
+             android:layout_marginTop="20dp"
+            android:layout_height="140dp"
             android:background="@color/colorDivider"
             />
 
                 <com.github.mikephil.charting.charts.PieChart
                     android:id="@+id/piechart1"
                     android:layout_width="0dp"
-                    android:layout_height="160dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="150dp"
                     android:layout_weight="2"
                     />
 
@@ -183,11 +197,13 @@
     <LinearLayout
         android:id="@+id/money_key_out"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="180dp"
         android:layout_below="@+id/money_key_in"
         android:orientation="horizontal"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/border_bottom"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/edit_text"
         android:weightSum="3"
         >
         <LinearLayout
@@ -220,14 +236,16 @@
         </LinearLayout>
         <View
             android:layout_width="1dp"
-            android:layout_height="160dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="20dp"
             android:background="@color/colorDivider"
             />
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/piechart2"
             android:layout_width="0dp"
-            android:layout_height="160dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="15dp"
             android:layout_weight="2"
             />
 

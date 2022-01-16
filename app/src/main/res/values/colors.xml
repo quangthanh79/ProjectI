@@ -8,8 +8,8 @@
 
     <color name="white">#FFFFFFFF</color>
 
-    <color name="colorPrimary">#44F404</color>
-    <color name="colorPrimaryDark">#3BBC04</color>
+    <color name="colorPrimary">#589ded</color>
+    <color name="colorPrimaryDark">#d4f587</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorTree">#C3F178</color>
     <color name="colorConcrete">#F2F2F2</color>

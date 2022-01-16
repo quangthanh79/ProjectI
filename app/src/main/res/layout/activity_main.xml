@@ -28,11 +28,11 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:background="#fff"
-        app:labelVisibilityMode="labeled"
-
         app:itemIconTint="@drawable/bg_selector"
         app:itemTextColor="@drawable/bg_selector"
-        app:menu="@menu/bottom_menu" />
+        app:menu="@menu/bottom_menu"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"/>
 
 
 </RelativeLayout>
